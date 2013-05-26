@@ -1,0 +1,245 @@
+---
+layout: default
+title: Resume
+---
+#resume
+  %h1.pagination-centered Resume
+
+  %hr
+
+  %p.lead
+    I'm Han, an entrepreneurial software engineer who is passionate about helping startups &amp; small businesses <u>rapidly ship features</u> with <em>real business value</em> that <em>delights their clients</em> by understanding customer needs and implementing solutions through <strong>high quality code and architecture</strong>.
+  %blockquote
+    "I believe in product as much as technology, customer development, continuous deployment, TDD, DRY, convention over configuration, composition over inheritance, 
+    flat orgs, agile, open source, and using the right tool for the job. Above all, I believe in <strong>shipping</strong> - check out my <a href="/projects">long list of projects</a>!"
+
+  %h3
+    %img(src="/images/oneryng.ico")
+    Founder
+    %small
+      %strong
+        %a(href="https://www.oneryng.com") OneRyng
+    %span.pull-right
+      %span.label.label-important Shanghai
+      %span.label.label-info Nov 2012 - Current
+  %p
+    Singlehandedly architected, designed, coded, and launched OneRyng in &lt; 2 months, part-time.
+  %p
+    Setup nginx reverse proxy as SSL endpoint to ensure secure connection to Heroku with custom domain and to improve page load times by serving cached static content.
+  %p
+    Developed automated processes for spinning up new VPN servers, managing user accounts, and monitoring server health.
+  %p
+    Integrated with <a href="https://www.stripe.com">Stripe</a> for recurring credit card payment processing.
+  %p
+    Integrated with <a href="http://www.mandrill.com">Mandrill</a> for email notifications.
+  %p
+    Streamlined customer support workflows to reduce support load and improve customer satisfaction.
+  %p
+    Connect with expat businesses in China for marketing outreach and bizdev.
+
+  %ul.breadcrumb
+    %li
+      Tech Stack:
+      %span.divider &nbsp;
+    %li
+      %span.badge.badge-success Rails 3.2.12
+      %span.divider /
+    %li
+      %span.badge.badge-success Heroku
+      %span.divider /
+    %li
+      %span.badge.badge-success Nginx + SSL
+      %span.divider /
+    %li
+      %span.badge.badge-success PostgreSQL
+      %span.divider /
+    %li
+      %span.badge.badge-success PPTP/L2TP VPN
+
+  -#
+    %h3 
+      %img(src="/images/nohatseo.png")
+      Technical CoFounder
+      %small
+        %strong 
+          %a(href="http://www.nohatseo.com") VIP Domain List
+      %span.pull-right
+        %span.label.label-important Shanghai
+        %span.label.label-info June 2012 - current
+    %p
+      Really cool stuff
+    %ul.breadcrumb
+      %li
+        Tech Stack:
+        %span.divider &nbsp;
+      %li
+        %span.badge.badge-success Rails 3.2.12
+        %span.divider /
+      %li
+        %span.badge.badge-success Sidekiq
+        %span.divider /
+      %li
+        %span.badge.badge-success Python crawler
+        %span.divider /
+      
+  %h3 
+    %img(src="/images/tnc.png")
+    Senior Web Developer
+    %small
+      %strong 
+        %a(href="http://www.thenetcircle.com") TheNetCircle
+    %span.pull-right
+      %span.label.label-important Shanghai
+      %span.label.label-info June 2011 - Oct 2012
+
+  %p
+    Spearheaded and implemented functional testing as a requirement for Scrum story completion via Behat and Jenkins - for <em>two</em> projects, reducing the number of bugs filed each sprint by 50%.
+  %p
+    Streamlined deployment from multiple shell scripts and commands into a one-click button on Jenkins, complete with test run results, reporting, and notifications.
+  %p 
+    Pioneered the use of static code analysis via <a href="http://www.sonarsource.org">Sonar</a> to find compile-time (interpret-time for PHP) bugs.
+  %p
+    Identified and restructured slow MySQL queries to improve application performance.
+  %p
+    Set up, customized, and maintained an instance of <a href="http://hubot.github.com">Hubot</a> for broadcasting build and deploy statuses (as well as funny jokes and pictures) on company IRC channels. 
+  %p
+    Responsible for interviewing candidates. Created a semi-automated system for giving candidates written and coding tests to weed out unqualified applicants, saving interviewers 10 hours/week on average. 
+  %p
+    Successfully convinced management to reboot a flailing 3+ year project that had no growth plan which was costing the company €X0,000 EUR/month. See the presentation at SpeakerDeck.
+
+  %ul.breadcrumb
+    %li
+      Tech Stack:
+      %span.divider &nbsp;
+    %li
+      %span.badge.badge-success Scrum
+      %span.divider /
+    %li
+      %span.badge.badge-success Nginx, PHP-FPM, APC
+      %span.divider /
+    %li
+      %span.badge.badge-success Memcached
+      %span.divider /
+    %li
+      %span.badge.badge-success MySQL
+      %span.divider /
+    %li
+      %span.badge.badge-success RabbitMQ
+
+  %h3 
+    %img(src="/images/lime.png")
+    Software Engineer
+    %small
+      %strong 
+        %a(href="http://www.limebrokerage.com") Lime Brokerage
+    %span.pull-right 
+      %span.label.label-important Boston
+      %span.label.label-info February 2009 - May 2010
+
+  %p
+    Architected and programmed a real time risk metric calculation engine in C++ used to process a variety of equities, futures, and options market metrics used in analyzing performance and risk of automated trading algorithms for each brokerage account. This engine then communicated the metrics (up to 1000/sec) via a Lime proprietary RPC messaging system to the control plane.
+  %p 
+    Designed and developed PULP, a custom programming language that incorporates basic elements of equities measurements (e.g. open order value, current buying power, shares traded, etc.) combined with mathematical and boolean operators to build customizable risk metrics on demand that broadcasts the values to clients in real time. PULP used ANTLR 3 for parsing and lexing.
+  %p
+    Developed the client side portlet in Flex for viewing the real time risk calculation metrics. The data was obtained from the control plane configuration via our web services backend implemented in Java and sent to the Flex clientside frontend via AMF. The data was requested using a GUI that generated the PULP code necessary to calculate the metric.
+  %p
+    Worked with J2EE using a custom MVC architecture through JBoss/Tomcat, Hibernate + MySQL for data store, and Adobe Flex for front end visualization to create portlets for clients to access various account, market, and risk data.
+  %p 
+    Experimented with CUDA, an nVidia architecture used to take advantage of the parallel processing power of GPUs to reduce computational running time.
+  %p
+    Prepared and demonstrated presentations of this technology to both internal users and potential customers.
+
+  %ul.breadcrumb
+    %li
+      Tech Stack:
+      %span.divider &nbsp;
+    %li
+      %span.badge.badge-success Java
+      %span.divider /
+    %li
+      %span.badge.badge-success J2EE
+      %span.divider /
+    %li
+      %span.badge.badge-success C++
+      %span.divider /
+    %li
+      %span.badge.badge-success Flex
+      %span.divider /
+    %li
+      %span.badge.badge-success MySQL
+      %span.divider /
+    %li
+      %span.badge.badge-success Hibernate
+      %span.divider /
+    %li
+      %span.badge.badge-success ANTLR
+
+  %h3 
+    %img(src="/images/mitll.png")
+    Satellite Software Engineer Intern
+    %small
+      %strong 
+        %a(href="http://www.ll.mit.edu") MIT Lincoln Labs
+    %span.pull-right 
+      %span.label.label-important Boston
+      %span.label.label-info Summer 2007
+
+  %p
+    Received government security clearance to work on "Secret" level classified projects.
+  %p 
+    Designed and implemented a filter for separating satellite messages by protocol and content type, cutting debug time by 300% by only showing relevant acknowledge and error messages.
+  %p
+    Added datasets consisting of an XML/Java GUI frontend for input and a C++ backend for various satellite protocols in a production environment.
+
+  %ul.breadcrumb
+    %li
+      Tech Stack:
+      %span.divider &nbsp;
+    %li
+      %span.badge.badge-success Java
+      %span.divider /
+    %li
+      %span.badge.badge-success Swing
+      %span.divider /
+    %li
+      %span.badge.badge-success C++
+      %span.divider /
+    %li
+      %span.badge.badge-success XML
+
+  %hr
+
+  %h2.pagination-centered Education
+
+  %h3 
+    %img(src="/images/bu.png")
+    Boston University
+    %small 
+      %strong Bachelor's and Master's in Computer Science
+    %span.pull-right 
+      %span.label.label-info 2004 - 2008
+  %p Completed the BA/MA Computer Science Program, which grants both a bachelor's and master's degree simultaneously upon graduation, in just 4 years.
+  %p Graduated Cum Laude; selected by faculty and served as the Boston University Computer Science student graduation speaker for the class of 2008.
+
+  %hr
+
+  %h2.pagination-centered Administrivia
+
+  .row
+    .span3
+      %h4 Languages
+      %p 
+        %img(src="/images/png/gb.png")
+        Native English 
+        %br
+        %img(src="/images/png/cn.png")
+        Fluent in Mandarin Chinese
+
+    .span5
+      %h4 Citizenship
+      %p 
+        %img(src="/images/png/us.png")
+        Dual United States and Taiwan (ROC) citizen. 
+        %br 
+        %img(src="/images/png/tw.png")
+        Legally able to work in the USA, no H1B visa required!

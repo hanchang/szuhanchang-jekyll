@@ -1,0 +1,98 @@
+!!! 5
+%html{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "en", :lang => "en"}
+  %head
+    <meta charset='utf-8'> 
+    %link{:rel => 'stylesheet', :href => '//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap.min.css', :type => 'text/css'}
+    %link{:rel => 'stylesheet', :href => '//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css', :type => 'text/css'}
+    %link{:rel => 'stylesheet', :href => '/css/style.css', :type => 'text/css'}
+    %link{:rel => 'stylesheet', :href => '/css/print.css', :type => 'text/css', :media => 'print'}
+    %link{:href => 'http://fonts.googleapis.com/css?family=Lato', :rel => 'stylesheet', :type => 'text/css'}
+    %link{:href => @canonical, :rel => 'canonical'}
+    :javascript
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-3354361-40']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    %title 
+      =@title
+
+  %body
+    .container
+      .row
+        #card.well.affix.span3
+                  
+          #bio
+            %h3.pagination-centered Szu Han Chang
+
+            #avatar
+              %img.img-polaroid(src="/images/han.jpg")
+
+            %hr
+
+          #menu
+            %ul.nav.nav-pills.nav-stacked
+              %li.nav-header Navigation Menu
+              %li{:class => @resume}
+                %a(href='/') 
+                  %i.icon-tasks 
+                  Resume
+              %li{:class => @projects}
+                %a(href='/projects.html') 
+                  %i.icon-beaker 
+                  Projects
+              %li{:class => @blog}
+                %a(href='/blog.html')
+                  %i.icon-pencil
+                  Blog
+              %li{:class => @coursework}
+                %a(href='/coursework.html') 
+                  %i.icon-book 
+                  Coursework
+            %hr
+
+          #contact
+            %ul.unstyled
+              %li 
+                %i.icon-home 
+                Shanghai, China
+              %li
+                %i.icon-phone
+                +1 (904) 748-9119
+              %li
+                %i.icon-globe 
+                %a(href='http://www.szuhanchang.com') www.szuhanchang.com
+              %li
+                %i.icon-inbox
+                %a(href='mailto:szu.han.chang@gmail.com') szu.han.chang@gmail.com
+              %li
+                %i.icon-linkedin
+                %a(href='http://www.linkedin.com/in/szuhanchang') linkedin.com/in/szuhanchang
+              %li
+                %i.icon-twitter
+                %a(href='http://www.twitter.com/hanchang') @hanchang
+              %li
+                %i.icon-github
+                %a(href='http://www.github.com/hanchang') github.com/hanchang
+              %li
+                %i.icon-laptop
+                %a(href='http://www.speakerdeck.com/hanchang') speakerdeck.com/hanchang
+
+
+      .row
+        .span3
+          %br
+
+        .span9
+          .content
+            {{ content }}
+            %footer.footer
+              &copy; 
+              = Time.now.year 
+              Szu Han Chang
+
