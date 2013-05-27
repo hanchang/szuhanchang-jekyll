@@ -1,2 +1,3 @@
 name: Szu Han Chang
+permalink: /blog/:title
 pygments: true
