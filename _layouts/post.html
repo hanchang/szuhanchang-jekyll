@@ -1,8 +1,12 @@
 ---
 layout: default
 ---
-<h2>{{ page.title }}</h2>
-<p class="meta">{{ page.date | date_to_string }}</p>
+<h3>
+  {{ page.title }}
+  <span><small class="pull-right meta">{{ page.date | date_to_string }}</small></span>
+</h3>
+
+<hr />
 
 <div id="post">
 {{ content }}
