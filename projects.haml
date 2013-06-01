@@ -670,11 +670,11 @@ permalink: /projects/
         %br
         %img(src="/images/szuhanchang.png")
         %ul
-          %li Sinatra
-          %li Ruby 1.9.3
+          %li Jekyll
+          %li Ruby 2
           %li Haml
+          %li Bootstrap
           %li Responsive Layout
-          %li nginx reverse proxy
         %a.btn{:href => "http://www.szuhanchang.com"} Visit Site
       .span5
         %p
@@ -687,14 +687,13 @@ permalink: /projects/
           %em 
             %strong Technology
           %br
-            The site was created using Sinatra and Haml and deployed on Heroku. However, I had some issues with the fact that the single Heroku dyno would idle and 
+            The site was created using Jekyll and Haml; it used to be a Sinatra app deployed on Heroku. However, I had some issues with the fact that the single Heroku dyno would idle and 
             take a long time to boot when someone requested the site for the first time. 
         %p
           As a result, I experimented with using nginx as a transparent reverse proxy 
           to cache the site contents and serve them directly as static pages from nginx. This worked well until I realized I had a ton of coursework that was only
-          hosted on my shared host and my VPS didn't have enough disk space to handle it so I wrote a script to wget mirror the Heroku site onto my shared host as
-          a deployment script. Now the site sits on nginx on my shared host served directly as HTML files.
-
+          hosted on my shared host and my VPS didn't have enough disk space to handle it so I ported everything over to Jekyll and now just serve static HTML pages
+          through nginx on my shared host.
 
   %hr
 
