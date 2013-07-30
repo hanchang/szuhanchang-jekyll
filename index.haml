@@ -9,14 +9,11 @@ title: Resume
   %hr
 
   %p.lead
-    I'm Han, an entrepreneurial software engineer who is passionate about helping startups and small businesses <u>rapidly ship features</u> with <em>real business value</em> that <em>delights their clients</em> by understanding customer needs and implementing solutions through <strong>high quality code and architecture</strong>.
-  %blockquote
-    "I believe in product as much as technology, customer development, continuous deployment, TDD, DRY, convention over configuration, composition over inheritance, 
-    flat orgs, agile, open source, and using the right tool for the job. Above all, I believe in <strong>shipping</strong> - check out my <a href="/projects">long list of projects</a>!"
+    I'm Han, an entrepreneurial software engineer who is passionate about helping innovative companies <u>rapidly ship features</u> with <em>real business value</em> that <em>delights their clients</em> by understanding customer needs and implementing solutions through <strong>high quality code and architecture</strong>.
 
   %h3
     %img(src="/images/okcupidlabs.png")
-    Fullstack Engineer
+    Fullstack Rails Engineer
     %small
       %strong
         %a(href="http://www.okcupidlabs.com") OkCupid Labs
@@ -24,9 +21,16 @@ title: Resume
       %span.label.label-important San Francisco
       %span.label.label-info Apr 2013 - Current
   %p
-    Created a Sinatra analytics app backed by MongoDB that facilitates querying into large volumes of data quickly for insights into site performance and user behavior.
+    Created a Sinatra analytics app with <a href="http://d3js.org">D3 visualizations</a> backed by MongoDB. The Rails application sends analytics data via RabbitMQ and the Sinatra app receives, processes, and inserts them into Mongo. The Sinatra app facilitates querying into large volumes of data quickly for insights into site performance and user behavior. The project was completed within first two weeks of start date.
   %p
-    Spearheaded a new profile onboarding experience for <a href="http://www.kiss.com">Kiss.com</a>, which has 10+ million users.
+    Deployed the Sinatra analytics app to AWS EC2 via custom written Chef recipe.
+  %p
+    Implemented a new profile onboarding experience for <a href="http://www.kiss.com">Kiss.com</a>, which has 10+ million users.
+  %p
+    Heavily refactored the Kiss.com User model to DRY up repetitive code using metaprogramming.
+  %p
+    Proposed migrating Resque workers (processes) to Sidekiq workers (threads) to reduce memory consumption, which also reduces monthly AWS costs.
+
   %ul.breadcrumb
     %li
       Tech Stack:
@@ -88,6 +92,22 @@ title: Resume
       %span.divider /
     %li
       %span.badge.badge-success PPTP/L2TP VPN
+
+  -#
+    %h3
+    BitXF
+    Cofounder
+    Sept 2012 - Current
+
+    * Developed two factor authentication functionality to protect user accounts from phishing and other attacks; authentication methods include Google Authenticator and SMS via the Tropo API, integrated with Devise via session variables.
+    * Developed tiered commission rate functionality, which decreases the commission rate when a user's trading volume exceeds certain thresholds, to encourage users to adopt the platform and trade more often.
+    * Developed trade rebate functionality, which rewards a user with a rebate for adding liquidity to the order book and charges a user with a rebate for taking liquidity from the order book.
+    * Developed a RESTful API for ticker, order book, account querying, and order placement / cancellation to allow third party charts access to exchange data as well as users to automatically trade. It uses token authentication instead of HMAC though, which I'd like to implement at some point in the future.
+    * Integrated Rack::Attack gem to rate limit the API against malicious actors and rate limit login attempts for improved account security.
+
+    Tech Stack: Rails 3.2.12, PostgreSQL, Memcached, Redis
+
+    BitXF as an exchange is pretty much feature complete so I don't work on it much anymore other than minor tweaks and maintenance tasks. My cofounders are now carrying the brunt of the work, which mostly consists of marketing and customer service.
 
   -#
     %h3 
