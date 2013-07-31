@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "ActiveAdmin as a Framework"
+title:  "ActiveAdmin as a Framework vs Ransack Gem"
 date:   2013-07-30
 tags: 
 ---
@@ -21,3 +21,7 @@ Cons of ActiveAdmin
 I actually interviewed at a company which started off using ActiveAdmin as the framework for an internal app, but they mentioned they regretted it and were working on porting it back to Rails.
 
 Writing this down helped me make my decision - I'm going to ditch ActiveAdmin and write it myself. I'll probably come up with a DSL for writing the filters anyways, so it'll be fine. If it's abstract enough maybe I can package it into a gem for others...?
+
+*Update*
+
+Obviously instead of writing all the search and filter logic manually, I went digging for a gem that would solve my problems. I quickly came across [Ransack](https://github.com/ernie/ransack) and it fit my needs perfectly. It gives access to a bunch of different search predicates, and although there's no built-in view generation, there is a customized `search_form_for` helper that easily links back to a model search query. Very easy to use and integrate, highly recommended!
