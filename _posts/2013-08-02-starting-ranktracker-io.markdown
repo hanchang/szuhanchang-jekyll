@@ -23,7 +23,7 @@ I'm looking at the following tech stack:
 * **[Graphite](http://graphite.wikidot.com/)** for storing the ranking data (since it's time series)
 * **Rails** for handling user input and output
 * **PostgreSQL** for storing user data (login, plan, tuples)
-* **Dashing? Graphene?**: for data visualization
+* **Dashing? Graphene?** for data visualization
 
 This stack should meet my business requirements, which from a practical perspective consists of just checking every single {keyword, locale, URL} tuple entered by a user and storing the Google rank of that URL for the keyword and locale specified. I don't see a need to keep over a year of data, and I plan on only checking a tuple once per day.
 
@@ -62,13 +62,13 @@ I looked at the various Rubygems for Graphite and found out that I probably don'
     require 'socket'
 
     conn = TCPSocket.new 'carbon.server.tld', 2003
-    conn.puts "rankings.#{locale}.#{keyword}.#{url} rank\n" # where rank is an integer
+    conn.puts "rankings.#{engine}.#{locale}.#{keyword}.#{url} rank #{Time.now.to_i}\n" # where rank is an integer
     conn.close
 
 > Decision: Use the TCP plaintext protocol for sending data from Ruby to Graphite.
 
 Notice that I put the locale first; this is to make the Graphite interface more usable, since it groups items hiearchically by the path component, which is delineated by dots. [On the documentation](http://graphite.wikidot.com/getting-your-data-into-graphite), they clearly state that "Volatile path components should be kept as deep into the hierarchy as possible", presumably for the purpose of maintaining your sanity.
 
-Unfortunately, my worst fears were confirmed after some Googling around - I was worried that special characters such as spaces, dashes, slashes, and colons would present a problem if they were used in the metric name. It turns out that this is definitely the case. I've summarized my discoveries about [which characters are valid in a Graphite metric name](#) in another post, so you can look there if you need details.
+Unfortunately, my worst fears were confirmed after some Googling around - I was worried that special characters such as spaces, dashes, slashes, and colons would present a problem if they were used in the metric name. It turns out that this is definitely the case. I've summarized my discoveries about [which characters are valid in a Graphite metric name](/2013/08/03/valid-characters-in-graphite-metric-name.html) in another post, so you can look there if you need details.
 
 It's getting late now so I'll wrap it up for today and continue tomorrow!
