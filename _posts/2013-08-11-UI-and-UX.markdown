@@ -16,3 +16,5 @@ As a result, I've decided to read both [The Design of Everyday Things]() and [Do
 This will take the entire rest of Sunday, but I think I deserve a bit of a break!
 
 Monday will consist of taking what I've learned and applying it to design a user friendly UX for ranktracker.io.
+
+ps> I did a bit more research and found out that cubism.js won't work as the visualization library because it requires that each data point take up exactly one pixel on their graphs; obviously, the sparseness of ranking data makes it a poor fit. I'm going to switch over to [Rickshaw](http://code.shutterstock.com/rickshaw/) instead.
