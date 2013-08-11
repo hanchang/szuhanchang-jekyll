@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "UI and UX"
+date:   2013-08-11
+tags: ranktracker.io
+---
+
+Frontend work has always been the most challenging for me, not from a technical perspective but from a decision making perspective. Honestly, I think that frontend chops are less about technique and much more about understanding user needs as they fit in the context of the application. 
+
+Before, I used to think that frontend work required a ton of creativity and artistry while backend pretty much just involved identifying and using the most suitable algorithms and data structures at hand, usually via the proper framework / gem / library, to solve the problem.
+
+However, I'm beginning to think more and more that my characterization of backend work also applies to frontend stuff, and it's just that I haven't learned the fundamentals of UX yet.
+
+As a result, I've decided to read both [The Design of Everyday Things]() and [Don't Make Me Think](), two books that are widely reknowned in the UX world. I'll leave summaries, notes, and reviews on my personal development blog at [iamhanchang.com](http://www.iamhanchang.com) when I'm done.
+
+This will take the entire rest of Sunday, but I think I deserve a bit of a break!
+
+Monday will consist of taking what I've learned and applying it to design a user friendly UX for ranktracker.io.
