@@ -1,0 +1,12 @@
+---
+layout: post
+title:  "No Fear"
+date:   2013-08-15
+tags: ranktracker.io
+---
+
+Since I last decided on moving from Graphite to Redis as my time series database for storing rank data, I've been putting it off because it's such a large rewrite that it's been kind of scary.
+
+This wasn't even a conscious move; I just didn't quite have as much motivation to continue, so I browsed Hacker News for awhile before realizing something was wrong. Now that I'm aware that there's a bit of fear lurking underneath, I'm much better able to address the issue.
+
+The fix was super simple - I've been working on ranktracker.io on a remote development box (VPS), mostly because I really like the flexibility of being able to work from any computer with a terminal, and also because I tend to switch computers quite often which makes it difficult to maintain a stable development environment. 

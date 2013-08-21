@@ -1,0 +1,19 @@
+---
+layout: post
+title:  "Theming"
+date:   2013-08-19
+tags: ranktracker.io
+---
+
+Argh, I'm upset at myself today for having wasted a ton of time. Here's how I uselessly passed today:
+
+* Debating whether or not to use Bootstrap 2.3.2 or Bootstrap 3 RC2.
+* Debating whether or not to use Bootstrap and build my own interface or get a pre-built theme to integrate into ranktracker.io
+
+After a bunch of hemming and hawing, I decided to break my rule of only using the latest and greatest and use a Bootstrap 2.3.2 theme, mostly because I wanted something working quickly that I didn't have to fiddle with.
+
+I went ahead and picked the [Ace Responsive Admin Template](https://wrapbootstrap.com/theme/ace-responsive-admin-template-WB0B30DGR/?ref=hanchang) from [wrapbootstrap.com](https://wrapbootstrap.com/?ref=hanchang). Even though it's the most popular theme, I'm okay with that - chances are my customers won't know, and even if they did it looks to be quite customizable and a good fit for the application, so that's alright by me. The most important reason why I chose it was because the author pledged to have a Bootstrap 3 version ready when the final release comes out. Since they've been updating the theme quite often / recently, I trusted them to follow through on their promise. 
+
+I'll bite the bullet and upgrade to Bootstrap 3 when the theme update comes out, so I'll stay on the edge; I highly value the mobile first ideology of the framework and think it will add significant value to the usefulness and attractiveness of ranktracker.io versus its competitors. That said, Bootstrap 2.3.2 when done right works great on mobile too, as long as the frontend developer is well versed in responsive web design.
+
+In hindsight, I should have known that this was the correct approach to take; the alternative of waiting for RC3 to stabilize into the final release would have stopped a lot of momentum and put a huge question mark in my schedule. Additionally, because I'm not a designer by training I have no business trying to develop a UX from scratch myself. In the future, I plan on making these kinds of hard decisions early and quickly to avoid wasting so much time on indecision.
