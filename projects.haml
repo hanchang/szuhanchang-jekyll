@@ -30,6 +30,7 @@ permalink: /projects/
   %a{:name => "web"}
   %h3.pagination-centered Web Applications
 
+
   %a{:name => "hellohero"}
   .project_container
     .row
@@ -119,18 +120,18 @@ permalink: /projects/
           %a(href="https://github.com/sensu/sensu") Sensu
           since it allows dynamic discovery of new nodes. Nagios requires that a static environment to perform monitoring, which is not feasible for my production setup because a new VPN server may be provisioned automatically at any time.
 
-  %a{:name => "vipdomainlist"}
+  %a{:name => "domaincrawler"}
   .project_container
     .row
       .span8
-        %h4 VIP Domain List 
+        %h4 Domain Crawler
     .row
       .span3
         (private url)
         %br
         %img(src="/images/domainvip.png")
         %ul
-          %li Rails 3.2.12
+          %li Rails 3.2.14
           %li MySQL
           %li Python 2.7
           %li Devise
@@ -141,66 +142,22 @@ permalink: /projects/
             %a(href="http://sidekiq.org") Sidekiq
           %li 
             %a(href="http://scrapy.org") Scrapy
-          %li 
-            %a(href="https://github.com/javan/whenever") Whenever
           %li Git
-          %li Whois
+          %li WhoisAPI
       .span5
         %p 
           %em 
             %strong Background
           %br
-            The VIP Domain List is the commercialization of the Koba project (see below). It crawls and determines if outbound links from seed urls contain domains that are able to be registered directly from a registrar without having to go through aftermarket auctions or sales. These domains are valuable because they already have inbound links and therefore when set up again, most of them have some PageRank and a better chance to rank.
+            The Domain Crawler is a robot that crawls the web and determines if outbound links from seed URLs contain domains that are able to be registered directly from a registrar without having to go through aftermarket auctions or sales. These domains are valuable because they were once live sites and already have inbound links; therefore when set up again, many of them have excellent SEO metrics and a better chance to rank or pass along authority when linking to other sites.
         %p 
           %em 
             %strong Technology
           %br
-            Refactoring the original Koba code was necessary to bring this product to market; Anemone as a crawler wasn't stable enough to use in production, so I switched to Scrapy which boasted significant speedup and stability over its Ruby counterpart. After Scrapy retrieves all outbound URLs from seed domains, those domains are stored in Redis. Sidekiq workers are then used to retrieve the domains from Redis and queue domain availability checking. Duplicate jobs are filtered to prevent redundant work and there is a nice control panel to monitor status. Since worker tasks can be run in parallel, the system is extremely fast and scalable.
+            Originally, <a href="http://anemone.rubyforge.org">Anemone</a> was the web crawler software, but unfortunately it wasn't stable enough to use in production due to memory leaks. I switched to Scrapy (written in Python) which boasted significant speedup and stability over its Ruby counterpart. After Scrapy retrieves all outbound URLs from seed domains, those domains are stored in Redis. Sidekiq workers are then used to retrieve the domains from Redis and queue domain availability checking. Duplicate jobs are filtered to prevent redundant work and there is a nice control panel to monitor status. Since worker tasks can be run in parallel, the system is extremely fast and scalable.
           %br
-            The customer facing frontend is a Rails app that uses Devise for authentication and authorization. Regular users can just browse the list of domains available for registration, and can sort by different metrics to determine a domain's value and whether or not it is worthwhile for registration. Admin users can run the crawler, clean up the domain list by removing spam, and administrate users. Data is cached via memcached to improve performance by reducing the need to retrieve information from disk.
+            The user facing frontend is a Rails app that uses Devise for authentication and authorization. Regular users can just browse the list of domains available for registration, and can sort by different metrics to determine a domain's value and whether or not it is worthwhile for registration. Admin users can run the crawler, clean up the domain list by removing spam, and administrate users. Data is cached via memcached to improve performance by reducing the need to retrieve information from disk.
 
-  %a{:name => "koba"}
-  .project_container
-    .row
-      .span8
-        %h4 Koba
-    .row
-      .span3
-        (private url)
-        %br
-        %img(src="/images/koba.png")
-        %ul
-          %li Sinatra
-          %li Ruby 1.9.3
-          %li PostgreSQL 9.1
-          %li Redis
-          %li WebSockets
-          %li 
-            %a(href="http://anemone.rubyforge.org") Anemone
-          %li 
-            %a(href="http://webd.is") Webdis
-          %li Git (with submodules)
-          %li SEOMoz API
-          %li Whois
-      .span5
-        %p 
-          %em 
-            %strong Background
-          %br
-          Koba is the codename for an internal tool I developed in Ruby and Python for crawling the web in order to find valuable domains that have already expired. It connects with a variety of APIs, including SEOMoz, AHrefs.com, and various WHOIS services to obtain the data required for automating calculation of estimated domain value.
-        %p
-          %em 
-            %strong Technology
-          %br
-          The system is designed as a state machine, and each candidate domain moves between various states: when they are identified by the web crawler, data is being pulled, value is being calculated, spam is being filtered, etc.
-        %p
-          Each state is represented by a key in Redis, with the value being a set of the domain names currently in that state.
-        %p
-          Both AOF and RDB persistence methods are used in Redis to ensure that data is not completely lost on reboot, but I do realize that some data may be lost because of the nature of the snapshots.
-        %p
-          I also wrote a quick Sinatra control panel so I could see in real-time the cardinality and contents of each set of domains in each state, as well as a separate page with the discovered valuable domains to be manually evaluated and purchased. Webdis provides direct JavaScript access to Redis data which is retrieved via long-polling AJAX or WebSockets.
-        %p
-          The entire system was optimized so that it could run on a 1024 MB Linode VPS - this includes the web crawler.
 
   %a{:name => "bitxf"}
   .project_container
@@ -747,3 +704,54 @@ permalink: /projects/
     %a{:href => "http://www.dokuwiki.org"} DokuWiki.
     Decisions are made by prototyping instead of debating; whoever has the best prototype moves forward with their design, and consensus is always reached quickly as a result of the quality of the prototype. We are agile and loosely coupled, so nobody needs to wait on another's progress to continue forward. There are legal structures in place to prevent any IP problems, but as a result I am unable to share further details regarding this project, especially code.
 
+-#
+  %a{:name => "ranktracker"}
+  .project_container
+    .row
+      .span8
+        %h4 
+          RankTracker.io
+    .row
+      .span3
+        %a(href="http://www.ranktracker.io") ranktracker.co
+        %br
+        %img(src="/images/ranktracker.png")
+        %ul
+          %li Ruby on Rails 3.2.14
+          %li Postgres 9.2
+          %li Heroku
+          %li Git
+          %li 
+            %a(href="http://apiaxle.com") ApiAxle
+          %li Devise
+          %li CanCan
+          %li FriendlyId
+          %li Redis (as RRD)
+          %li Mechanize + Nokogiri in Distributed Crawler Workers
+          %li 
+            %a(href="http://www.iron.io") Iron.io (MQ and Worker)
+          %li 
+            %a(href="http://moz.com/products/api") Moz API
+
+        %a.btn(href="http://www.hellohero.co") Visit Site
+
+      .span5
+        %p
+          %em 
+            %strong Background
+          %br
+          Ranktracker.io is an automated solution for checking search engine rankings of sites; it was created to help quantify Search Engine Optimization results for my own projects.
+        %p
+          It crawls Google search results daily for keywords you specify and checks the rank of web pages you own in order to track their movements and alert you if there are significant changes in rankings. Since higher rankings yields higher targeted website traffic, this is a really big deal for any business with an online presence in order to acquire customers cost effectively.
+          
+        %p
+          %em 
+            %strong Technology
+          %br
+          To store ranking data, a Redis list is used along with some business logic to create an in-memory round robin database. This allows users to quickly see historical data in graph format while keeping the relational database clean.
+        %p
+          <a href="https://github.com/rails/turbolinks">Turbolinks</a> is used to help speed up page load times so that performance is similar to a JavaScript framework client like backbone / Ember / Angular without needing to do client-side MVC. This is because the ranktracker.io frontend is slightly heavy due to the Rickshaw graph library, but Turbolinks removes the need to reinterpret the JavaScript and CSS on each page load.
+        %p
+          Iron.io Workers are used as distributed crawlers to check Google search results, allowing massive parallelization with the added benefit of not triggering any rate limiting.
+        %p
+          ApiAxle, a Node.js application that serves as a reverse proxy into the ranktracker.io RESTful API, is being integrated which will help with rate limiting clients, providing analytics, and caching data for faster response times.
