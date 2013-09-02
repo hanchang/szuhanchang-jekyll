@@ -30,6 +30,47 @@ permalink: /projects/
   %a{:name => "web"}
   %h3.pagination-centered Web Applications
 
+  %a{:name => "ranktracker"}
+  .project_container
+    .row
+      .span8
+        %h4 Ranktracker.io
+    .row
+      .span3
+        %a(href="http://www.ranktracker.io") ranktracker.io
+        %br
+        %img(src="/images/ranktracker.png")
+        %ul
+          %li Ruby on Rails 3.2.14
+          %li Postgres 9.2
+          %li Redis (as custom RRD)
+          %li Devise
+          %li FriendlyId
+          %li Git
+          %li Distributed Workers
+          %li Messaging Queue
+        %em Planned
+        %ul
+          %li ApiAxle
+          %li Stripe
+          %li CanCan
+      .span5
+        %p
+          %em 
+            %strong Background
+          %br
+          Ranktracker.io is a SaaS platform that automatically checks your site's ranking in the search engine results daily. Since a site's position in the rankings strongly correlates with the amount of traffic it will receive, keeping track of the rank is an important step to making sure that any SEO performed is making a (hopefully positive) impact. Although it is currently an internal tool only, in the future it will be opened up for public usage, especially after perfecting the proprietary "Thirst" metric which measures the ROI of getting a particular page ranked for a target keyword against the current set of competitors for that search term.
+        %p
+          %em
+            %strong Technology
+          %br
+          Originally built on Rails 4, it was downgraded back to Rails 3.2.14 because the gem ecosystem does not yet have full support for Rails 4 at the moment.
+        %p
+          Redis Lists are used to store the ranking data, and additional backend logic has been added to modify it to function as a round robin database similar to WhisperDB used in Graphite. This ensures that each keyword / URL pair will at most only use a certain amount of space while allowing for further customization in the future.
+        %p
+          Massively distributed workers are used to parallelize rank checks and avoid rate limiting, and message queues are used to communicate and coordinate amongst all of the workers.
+        %p
+          ApiAxle (through Node.js) will be used to help with API keys / HMAC authentication, enforcing rate limits, and caching results. CanCan will help segment users by plan volume, and Stripe will be the payment processor.
 
   %a{:name => "hellohero"}
   .project_container
@@ -157,6 +198,37 @@ permalink: /projects/
             Originally, <a href="http://anemone.rubyforge.org">Anemone</a> was the web crawler software, but unfortunately it wasn't stable enough to use in production due to memory leaks. I switched to Scrapy (written in Python) which boasted significant speedup and stability over its Ruby counterpart. After Scrapy retrieves all outbound URLs from seed domains, those domains are stored in Redis. Sidekiq workers are then used to retrieve the domains from Redis and queue domain availability checking. Duplicate jobs are filtered to prevent redundant work and there is a nice control panel to monitor status. Since worker tasks can be run in parallel, the system is extremely fast and scalable.
           %br
             The user facing frontend is a Rails app that uses Devise for authentication and authorization. Regular users can just browse the list of domains available for registration, and can sort by different metrics to determine a domain's value and whether or not it is worthwhile for registration. Admin users can run the crawler, clean up the domain list by removing spam, and administrate users. Data is cached via memcached to improve performance by reducing the need to retrieve information from disk.
+
+  %a{:name => "parchedoracle"}
+  .project_container
+    .row
+      .span8
+        %h4 Parched Oracle
+    .row
+      .span3
+        (private url)
+        %br
+        %img(src="/images/parchedoracle.png")
+        %ul
+          %li Ruby on Rails 3.2.14
+          %li MySQL
+          %li Devise
+          %li Git
+          %li Distributed workers
+          %li Variety of APIs
+      .span5
+        %p
+          %em 
+            %strong Background
+          %br
+          Parched Oracle is a SEO keyword research tool that aggregates data from a variety of sources to produce a comprehensive analysis of the attrativeness of a particular search term based on its search volume, average ad price, seasonality, and strength of competition.
+        %p
+          %em
+            %strong Technology
+          %br
+          Parched Oracle taps into a wide variety of APIs to gather the data, and uses distributed workers to help collect that data in a scalable fashion.
+        %p
+          Devise provides the user authentication functionality.
 
 
   %a{:name => "bitxf"}
